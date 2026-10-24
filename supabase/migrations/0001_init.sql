@@ -7,10 +7,8 @@ create table public.allowed_emails (
   email text primary key
 );
 
--- Replace with Simone's and Kat's real addresses.
-insert into public.allowed_emails (email) values
-  ('simone@example.com'),
-  ('kat@example.com');
+-- Add Simone's and Kat's addresses after running this file (see README).
+-- Local development uses the example addresses in supabase/seed.sql.
 
 alter table public.allowed_emails enable row level security;
 -- No policies: the table is only readable through is_allowed_user() below.
