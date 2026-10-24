@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --brand: #c8102e;
+  --brand-ink: #ffffff;
+  --background: #fbf7f0;
+  --surface: #ffffff;
+  --foreground: #2a211c;
+  --muted: #7a6c62;
+  --line: #e8dfd3;
+  --field: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: #d8283f;
+    --background: #1c1714;
+    --surface: #26201c;
+    --foreground: #f3ece4;
+    --muted: #b3a597;
+    --line: #3b322c;
+    --field: #2e2722;
+  }
+}
+
+@theme inline {
+  --color-brand: var(--brand);
+  --color-brand-ink: var(--brand-ink);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-field: var(--field);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* The red-and-white tablecloth band from the logo. */
+.checkered {
+  height: 10px;
+  background-color: #fff;
+  background-image:
+    linear-gradient(45deg, var(--brand) 25%, transparent 25%, transparent 75%, var(--brand) 75%),
+    linear-gradient(45deg, var(--brand) 25%, transparent 25%, transparent 75%, var(--brand) 75%);
+  background-size: 10px 10px;
+  background-position: 0 0, 5px 5px;
+}
+
+.field {
+  width: 100%;
+  border-radius: 0.6rem;
+  border: 1px solid var(--line);
+  background: var(--field);
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem; /* 16px stops iOS zooming into inputs */
+  color: var(--foreground);
+}
+
+.field:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: 1px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  padding: 0.65rem 1.2rem;
+  font-weight: 600;
+  min-height: 44px;
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: var(--brand-ink);
+}
+
+.btn-secondary {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--foreground);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+}
